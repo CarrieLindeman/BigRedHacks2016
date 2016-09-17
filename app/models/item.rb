@@ -19,6 +19,7 @@ class Item < ActiveRecord::Base
       else
         rgb[0] = 255
     	end
+      rgb
     end
 
 end
