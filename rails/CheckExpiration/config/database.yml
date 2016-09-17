@@ -1,0 +1,30 @@
+base: &base
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  reconnect: true
+
+local: &local
+  socket: /Applications/MAMP/tmp/mysql/mysql.sock
+  username: root
+  password: root
+
+live: &live
+  username: test
+  password: test
+  host: localhost
+
+development:
+  <<: *base
+  <<: *local
+  database: CheckExpiration_development
+
+test:
+  <<: *base
+  <<: *local
+  database: CheckExpiration_test
+
+production:
+  <<: *base
+  <<: *live
+  database: CheckExpiration_production
