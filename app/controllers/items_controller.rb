@@ -37,6 +37,8 @@ class ItemsController < ApplicationController
       else
         output_text = "You have #{@items.count} things expiring before #{input_date.to_s}. They are #{item_list}"
       end
+    else
+      output_text = "I don't know what to do."
     end
     j = {
 				  "version" => "1.0",
