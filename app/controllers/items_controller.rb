@@ -3,8 +3,8 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def expiring_today
-    @items = Item.where("expiration <= ?", Time.now)
-    item_list = @items.map { |item| item.name }.join(',')
+    @items = Item.where("expiration <= ?", Time.now).where(removed: false)
+    item_list = @items.map { |item| item.name }.join(', ')
     if item_list.length < 1
       output_text = "Nothing is expiring today."
     else
@@ -38,6 +38,7 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.name = params[:request][:intent][:slots][:Food][:value]
     @item.expiration = Date.parse(params[:request][:intent][:slots][:Date][:value])
+    @item.removed = false
     @item.save
     output_text = "Got it. #{@item.name} expires on #{distance_of_time_in_words_to_now(@item.expiration)}"
     j = {

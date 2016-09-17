@@ -7236,3 +7236,255 @@ Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde45
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-17 07:57:05 -0400
+
+
+Started GET "/" for ::1 at 2016-09-17 08:54:30 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/evan/.rvm/gems/ruby-2.2.1/gems/railties-4.2.5.2/lib/rails/templates/rails/welcome/index.html.erb (2.4ms)
+Completed 200 OK in 24ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for ::1 at 2016-09-17 08:54:33 -0400
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.2ms)[0m  SELECT `items`.* FROM `items`
+  Rendered items/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 767ms (Views: 762.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/scaffolds.self-149658ad0421a51019fe81302c87955efb1270a98de040779715e00a7bcb758b.css?body=1" for ::1 at 2016-09-17 08:54:34 -0400
+
+
+Started DELETE "/items/2" for ::1 at 2016-09-17 08:54:38 -0400
+Processing by ItemsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mF8Zzn2SgtEwrk/f7x+nDIkM4mASrlAUhmzv2rnLOVDIIcsVZyiu12HKUEwT4d3wkXrwEm8N688DAyxbY+vtTA==", "id"=>"2"}
+  [1m[36mItem Load (2.4ms)[0m  [1mSELECT  `items`.* FROM `items` WHERE `items`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM `items` WHERE `items`.`id` = 2[0m
+  [1m[35m (1.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/items
+Completed 302 Found in 38ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/items" for ::1 at 2016-09-17 08:54:38 -0400
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  Rendered items/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/items/3" for ::1 at 2016-09-17 08:54:39 -0400
+Processing by ItemsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"qUhsbXvmUKE+T47zwIoC13HLdbPPOTh4YlP/pfZ9oNr5Nr62YVx8p28rkWA8dHgrab1nwbKag6PnPDwkLF10xg==", "id"=>"3"}
+  [1m[35mItem Load (0.3ms)[0m  SELECT  `items`.* FROM `items` WHERE `items`.`id` = 3 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `items` WHERE `items`.`id` = 3
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/items
+Completed 302 Found in 6ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/items" for ::1 at 2016-09-17 08:54:39 -0400
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.2ms)[0m  SELECT `items`.* FROM `items`
+  Rendered items/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/items/1" for ::1 at 2016-09-17 08:54:40 -0400
+Processing by ItemsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7ni+AnGvNMc8r/9SRVQnJgT6JmB+kui/lVfC9TQG8tW+BmzZaxUYwW3L4MG5ql3aHIw0EgMxU2QQOAF07iYmyQ==", "id"=>"1"}
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT  `items`.* FROM `items` WHERE `items`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `items` WHERE `items`.`id` = 1[0m
+  [1m[35m (2.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/items
+Completed 302 Found in 6ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/items" for ::1 at 2016-09-17 08:54:40 -0400
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  Rendered items/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/new" for ::1 at 2016-09-17 08:54:41 -0400
+Processing by ItemsController#new as HTML
+  Rendered items/_form.html.erb (24.3ms)
+  Rendered items/new.html.erb within layouts/application (29.1ms)
+Completed 200 OK in 54ms (Views: 53.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for ::1 at 2016-09-17 08:54:53 -0400
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NyDUZwoq5fyGFFKLsZKoPC9w++Qa3KOKiE+fVRKyE2JnXga8EJDJ+tdwTRhNbNLANwbplmd/GFENIFzUyJLHfg==", "item"=>{"name"=>"18th", "expiration(1i)"=>"2016", "expiration(2i)"=>"9", "expiration(3i)"=>"18", "removed"=>"0"}, "commit"=>"Create Item"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `items` (`name`, `removed`, `expiration`, `created_at`, `updated_at`) VALUES ('18th', 0, '2016-09-18', '2016-09-17 12:54:53', '2016-09-17 12:54:53')[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/items/4
+Completed 302 Found in 5ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/items/4" for ::1 at 2016-09-17 08:54:53 -0400
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT  `items`.* FROM `items` WHERE `items`.`id` = 4 LIMIT 1[0m
+  Rendered items/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items" for ::1 at 2016-09-17 08:54:56 -0400
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.2ms)[0m  SELECT `items`.* FROM `items`
+  Rendered items/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 25ms (Views: 23.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/new" for ::1 at 2016-09-17 08:54:58 -0400
+Processing by ItemsController#new as HTML
+  Rendered items/_form.html.erb (3.7ms)
+  Rendered items/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 26ms (Views: 25.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for ::1 at 2016-09-17 08:55:03 -0400
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GogSjjTZYk7nimWSSNYKbWG+rx+YfUh2o3wEAROVQ+NK9sBVLmNOSLbuegG0KHCReci9beXe860mE8eAybWX/w==", "item"=>{"name"=>"17th", "expiration(1i)"=>"2016", "expiration(2i)"=>"9", "expiration(3i)"=>"17", "removed"=>"0"}, "commit"=>"Create Item"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `items` (`name`, `removed`, `expiration`, `created_at`, `updated_at`) VALUES ('17th', 0, '2016-09-17', '2016-09-17 12:55:03', '2016-09-17 12:55:03')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/items/5
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/items/5" for ::1 at 2016-09-17 08:55:03 -0400
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT  `items`.* FROM `items` WHERE `items`.`id` = 5 LIMIT 1
+  Rendered items/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items" for ::1 at 2016-09-17 08:55:04 -0400
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  Rendered items/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/new" for ::1 at 2016-09-17 08:55:05 -0400
+Processing by ItemsController#new as HTML
+  Rendered items/_form.html.erb (2.4ms)
+  Rendered items/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for ::1 at 2016-09-17 08:55:09 -0400
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8FgvVHEJF2iKzx4BJorHiuOQyY43UNXlsmLuARx5ckqgJv2Pa7M7bturAZLadL12++bb/Erzbj43DS2AxlmmVg==", "item"=>{"name"=>"16th", "expiration(1i)"=>"2016", "expiration(2i)"=>"9", "expiration(3i)"=>"16", "removed"=>"0"}, "commit"=>"Create Item"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `items` (`name`, `removed`, `expiration`, `created_at`, `updated_at`) VALUES ('16th', 0, '2016-09-16', '2016-09-17 12:55:09', '2016-09-17 12:55:09')[0m
+  [1m[35m (1.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/items/6
+Completed 302 Found in 8ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/items/6" for ::1 at 2016-09-17 08:55:09 -0400
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  `items`.* FROM `items` WHERE `items`.`id` = 6 LIMIT 1[0m
+  Rendered items/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items" for ::1 at 2016-09-17 08:55:11 -0400
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.3ms)[0m  SELECT `items`.* FROM `items`
+  Rendered items/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items/new" for ::1 at 2016-09-17 08:55:24 -0400
+Processing by ItemsController#new as HTML
+  Rendered items/_form.html.erb (2.2ms)
+  Rendered items/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for ::1 at 2016-09-17 08:55:33 -0400
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EDbcxAmdMnxCU8pAwOoA2pKdtuEXn0fB9/grW/QcuFdASA4fEyceehM31dM8FHomiuukk2o8/Bpyl+jaLjxsSw==", "item"=>{"name"=>"19th removed", "expiration(1i)"=>"2016", "expiration(2i)"=>"9", "expiration(3i)"=>"19", "removed"=>"1"}, "commit"=>"Create Item"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `items` (`name`, `removed`, `expiration`, `created_at`, `updated_at`) VALUES ('19th removed', 1, '2016-09-19', '2016-09-17 12:55:33', '2016-09-17 12:55:33')
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/items/7
+Completed 302 Found in 4ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/items/7" for ::1 at 2016-09-17 08:55:33 -0400
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mItem Load (0.3ms)[0m  SELECT  `items`.* FROM `items` WHERE `items`.`id` = 7 LIMIT 1
+  Rendered items/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items" for ::1 at 2016-09-17 08:55:35 -0400
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  Rendered items/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/response" for ::1 at 2016-09-17 08:55:38 -0400
+Processing by ItemsController#expiring_today as HTML
+  [1m[35mItem Load (0.5ms)[0m  SELECT `items`.* FROM `items` WHERE (expiration <= '2016-09-17 12:55:38.850694') AND `items`.`removed` = 0
+  [1m[36m (1.9ms)[0m  [1mSELECT COUNT(*) FROM `items` WHERE (expiration <= '2016-09-17 12:55:38.850694') AND `items`.`removed` = 0[0m
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/response" for ::1 at 2016-09-17 08:55:57 -0400
+Processing by ItemsController#expiring_today as HTML
+  [1m[35mItem Load (0.3ms)[0m  SELECT `items`.* FROM `items` WHERE (expiration <= '2016-09-17 12:55:57.664205') AND `items`.`removed` = 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `items` WHERE (expiration <= '2016-09-17 12:55:57.664205') AND `items`.`removed` = 0[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/items/new" for ::1 at 2016-09-17 08:56:02 -0400
+Processing by ItemsController#new as HTML
+  Rendered items/_form.html.erb (2.3ms)
+  Rendered items/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 16ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for ::1 at 2016-09-17 08:56:11 -0400
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vfuJmVpWs+QNvf++kxiIl5Ea7QB2vxoFSrvkCHqBeFXthVtCQOyf4lzZ4C1v5vJriWz/cgscod7P1CeJoKGsSQ==", "item"=>{"name"=>"14th removed", "expiration(1i)"=>"2016", "expiration(2i)"=>"9", "expiration(3i)"=>"14", "removed"=>"1"}, "commit"=>"Create Item"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `items` (`name`, `removed`, `expiration`, `created_at`, `updated_at`) VALUES ('14th removed', 1, '2016-09-14', '2016-09-17 12:56:11', '2016-09-17 12:56:11')[0m
+  [1m[35m (0.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/items/8
+Completed 302 Found in 4ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/items/8" for ::1 at 2016-09-17 08:56:11 -0400
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT  `items`.* FROM `items` WHERE `items`.`id` = 8 LIMIT 1[0m
+  Rendered items/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items" for ::1 at 2016-09-17 08:56:13 -0400
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.2ms)[0m  SELECT `items`.* FROM `items`
+  Rendered items/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/response" for ::1 at 2016-09-17 08:56:15 -0400
+Processing by ItemsController#expiring_today as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT `items`.* FROM `items` WHERE (expiration <= '2016-09-17 12:56:15.243719') AND `items`.`removed` = 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM `items` WHERE (expiration <= '2016-09-17 12:56:15.243719') AND `items`.`removed` = 0
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
