@@ -47,7 +47,7 @@ class ItemsController < ApplicationController
         output_text = "Nothing is expiring before #{input_date.to_s}."
       else
         output_text = "You have #{pluralize(@items.count, 'thing')} expiring before #{input_date.to_s}. They are #{item_list}"
-      end
+      end 
     else
       output_text = "I don't know what to do."
     end
