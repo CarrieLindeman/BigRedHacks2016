@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   include ActionView::Helpers::DateHelper
+  include ActionView::Helpers::TextHelper
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def alexa_handler
