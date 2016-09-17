@@ -47,7 +47,7 @@ class ItemsController < ApplicationController
         output_text = "Nothing is expiring before #{input_date.to_s}."
       else
         output_text = "You have #{pluralize(@items.count, 'thing')} expiring before #{input_date.to_s}: #{item_list}"
-      end 
+      end
     else
       output_text = "I don't know what to do."
     end
@@ -78,7 +78,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+    @items = Item.all.order(expiration: :asc)
   end
 
   # GET /items/1
