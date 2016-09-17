@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
       if item_list.length < 1
         output_text = "Nothing is expiring today."
       else
-        output_text = "You have #{@items.count} things expiring today. They are #{item_list}"
+        output_text = "You have #{pluralize(@items.count, 'thing')} expiring today. They are #{item_list}"
       end
     elsif intent == 'AddItem'
       @item = Item.new
@@ -35,7 +35,7 @@ class ItemsController < ApplicationController
       if item_list.length < 1
         output_text = "Nothing is expiring before #{input_date.to_s}."
       else
-        output_text = "You have #{@items.count} things expiring before #{input_date.to_s}. They are #{item_list}"
+        output_text = "You have #{pluralize(@items.count, 'thing')} expiring before #{input_date.to_s}. They are #{item_list}"
       end
     else
       output_text = "I don't know what to do."
