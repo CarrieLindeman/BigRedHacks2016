@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
       if item_list.length < 1
         output_text = "Nothing is expiring today."
       else
-        output_text = "You have #{pluralize(@items.count, 'thing')} expiring today. They are #{item_list}"
+        output_text = "You have #{pluralize(@items.count, 'thing')} expiring today: #{item_list}"
       end
     elsif intent == 'AddItem'
       @item = Item.new
@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
       @item.expiration = Date.parse(params[:request][:intent][:slots][:Date][:value])
       @item.removed = false
       @item.save
-      output_text = "Got it. #{@item.name} expires on #{distance_of_time_in_words(@item.expiration, Date.today)}"
+      output_text = "Got it. Your #{@item.name} expires in #{distance_of_time_in_words(@item.expiration, Date.today)}"
     elsif intent == 'GetDate'
       input_name = params[:request][:intent][:slots][:Food][:value]
       items = Item.where("name like ?", "%#{input_name}%").order(expiration: :asc)
@@ -46,7 +46,7 @@ class ItemsController < ApplicationController
       if item_list.length < 1
         output_text = "Nothing is expiring before #{input_date.to_s}."
       else
-        output_text = "You have #{pluralize(@items.count, 'thing')} expiring before #{input_date.to_s}. They are #{item_list}"
+        output_text = "You have #{pluralize(@items.count, 'thing')} expiring before #{input_date.to_s}: #{item_list}"
       end 
     else
       output_text = "I don't know what to do."

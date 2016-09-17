@@ -1,0 +1,30 @@
+{
+  "intents": [
+    {
+      "intent": "GetFoods",
+      "slots": [
+        {
+          "name": "Date",
+          "type": "AMAZON.DATE"
+        },
+        {
+          "name": "Foods",
+          "type": "LIST_OF_FOODS"
+        }
+      ]
+    },
+    {
+      "intent": "GetDate",
+      "slots": [
+        {
+          "name": "Food",
+          "type": "LIST_OF_FOODS"
+        },
+        {
+          "name": "Date",
+          "type": "AMAZON.DATE"
+        }
+      ]
+    }
+  ]
+}
