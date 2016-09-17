@@ -2,7 +2,14 @@ class Item < ActiveRecord::Base
     include ActionView::Helpers::DateHelper
 
     def days_until_date
-        distance_of_time_in_words(expiration, Date.today)
+    	if (expiration - Date.today < 0)
+    		s = "Expired #{distance_of_time_in_words(expiration, Date.today)} ago."
+    	elsif (expiration - Date.today == 0)
+    		s = "Expires today."
+    	else
+    		s = "Expires in #{distance_of_time_in_words(expiration, Date.today)}".
+    	end
+        
     end
 
     def color
