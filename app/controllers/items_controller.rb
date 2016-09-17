@@ -3,9 +3,13 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def expiring_today
-    @items = Item.where("expiration >= ?", Time.now)
+    @items = Item.where("expiration <= ?", Time.now)
     item_list = @items.map { |item| item.name }.join(',')
-    output_text = "You have #{@items.count} things expiring today. They are #{item_list}"
+    if item_list.length < 1
+      output_text = "Nothing is expiring today."
+    else
+      output_text = "You have #{@items.count} things expiring today. They are #{item_list}"
+    end
     j = {
 				  "version" => "1.0",
 					"response" => {
