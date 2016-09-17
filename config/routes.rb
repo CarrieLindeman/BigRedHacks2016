@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   resources :items
 
-  get 'response' => 'items#expiring_today'
-  post 'response' => 'items#add_item'
+  get 'response' => 'items#alexa_handler'
+  post 'response' => 'items#alexa_handler'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
