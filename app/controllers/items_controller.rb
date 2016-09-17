@@ -91,7 +91,7 @@ class ItemsController < ApplicationController
 
   def add_item
     # @item = Item.new
-    p params[:request][:intent][:slots][:name][]
+    # p params[:request][:intent][:slots][:name]
     j = {
 				  "version" => "1.0",
 					"response" => {
