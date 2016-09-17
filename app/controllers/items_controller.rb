@@ -1,34 +1,22 @@
 class ItemsController < ApplicationController
   include ActionView::Helpers::DateHelper
-
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
-  # GET /items
-  # GET /items.json
-  def index
-    @items = Item.all
-  end
-
-  # GET /items/1
-  # GET /items/1.json
-  def show
-
-
-
-  end
-
-  def response_json
+  def expiring_today
+    @items = Item.where("expiration >= ?", Time.now)
+    item_list = @items.map { |item| item.name }.join(',')
+    output_text = "You have #{@items.count} things expiring today. They are #{item_list}"
     j = {
 				  "version" => "1.0",
 					"response" => {
 					  "outputSpeech" => {
 					    "type" => "PlainText",
-					    "text" => "Hello World"
+					    "text" => output_text
 					  },
 					  "card" => {
 					    "type" => "Simple",
-					    "title" => "Hello World",
-					    "content" => "This is a test"
+					    "title" => "Expiration Check",
+					    "content" => output_text
 					  },
   				  "reprompt" => {
   				    "outputSpeech" => {
@@ -40,6 +28,47 @@ class ItemsController < ApplicationController
   				}
   			}
     render json: j
+  end
+
+  def add_item
+    @item = Item.new
+    @item.name = params[:request][:intent][:slots][:Food][:value]
+    @item.expiration = Date.parse(params[:request][:intent][:slots][:Date][:value])
+    @item.save
+    output_text = "Got it. #{@item.name} expires on #{distance_of_time_in_words_to_now(@item.expiration)}"
+    j = {
+          "version" => "1.0",
+          "response" => {
+            "outputSpeech" => {
+              "type" => "PlainText",
+              "text" => output_text
+            },
+            "card" => {
+              "type" => "Simple",
+              "title" => "Expiration Check",
+              "content" => output_text
+            },
+            "reprompt" => {
+              "outputSpeech" => {
+                "type" => "PlainText",
+                "text" => "Hello"
+              }
+            },
+            "shouldEndSession" => true
+          }
+        }
+    render json: j
+  end
+
+  # GET /items
+  # GET /items.json
+  def index
+    @items = Item.all
+  end
+
+  # GET /items/1
+  # GET /items/1.json
+  def show
   end
 
   # GET /items/new
@@ -89,35 +118,6 @@ class ItemsController < ApplicationController
       format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
       format.json { head :no_content }
     end
-  end
-
-  def add_item
-    @item = Item.new
-    @item.name = params[:request][:intent][:slots][:Food][:value]
-    @item.expiration = Date.parse(params[:request][:intent][:slots][:Date][:value])
-    @item.save
-    j = {
-				  "version" => "1.0",
-					"response" => {
-					  "outputSpeech" => {
-					    "type" => "PlainText",
-					    "text" => "Got it. #{@item.name} expires on #{distance_of_time_in_words_to_now(@item.expiration)}"
-					  },
-					  "card" => {
-					    "type" => "Simple",
-					    "title" => "Hello World",
-					    "content" => "This is a test"
-					  },
-  				  "reprompt" => {
-  				    "outputSpeech" => {
-  				      "type" => "PlainText",
-  				      "text" => "Hello"
-  				    }
-  				  },
-  				  "shouldEndSession" => true
-  				}
-  			}
-    render json: j
   end
 
   private

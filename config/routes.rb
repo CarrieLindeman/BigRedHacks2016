@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :items
 
-  get 'response' => 'items#response_json'
+  get 'response' => 'items#expiring_today'
   post 'response' => 'items#add_item'
 
   # The priority is based upon order of creation: first created -> highest priority.
