@@ -1,0 +1,10 @@
+{
+  "intents": [
+    {
+      "intent": "CheckExpirationIntent"
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    }
+  ]
+}
