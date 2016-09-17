@@ -19,13 +19,13 @@ class ItemsController < ApplicationController
       @item.expiration = Date.parse(params[:request][:intent][:slots][:Date][:value])
       @item.removed = false
       @item.save
-      output_text = "Got it. #{@item.name} expires on #{distance_of_time_in_words_to_now(@item.expiration)}"
+      output_text = "Got it. #{@item.name} expires on #{distance_of_time_in_words(@item.expiration, Date.today)}"
     elsif intent == 'GetDate'
       input_name = params[:request][:intent][:slots][:Food][:value]
       items = Item.where("name like ?", "%#{input_name}%").order(expiration: :asc)
       if items.length > 0
         the_item = items.first
-        output_text = "Your #{the_item.name} expires in #{distance_of_time_in_words_to_now(the_item.expiration)}"
+        output_text = "Your #{the_item.name} expires in #{distance_of_time_in_words(the_item.expiration, Date.today)}"
       else
         output_text = "Sorry, I couldn't find that item."
       end
