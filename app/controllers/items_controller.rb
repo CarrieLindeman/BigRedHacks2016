@@ -90,8 +90,30 @@ class ItemsController < ApplicationController
   end
 
   def add_item
-    @item = Item.new
-  #  @item.name = params[:request][:intent][:slots][:name][]
+    # @item = Item.new
+    p params[:request][:intent][:slots][:name][]
+    j = {
+				  "version" => "1.0",
+					"response" => {
+					  "outputSpeech" => {
+					    "type" => "PlainText",
+					    "text" => "Hello World"
+					  },
+					  "card" => {
+					    "type" => "Simple",
+					    "title" => "Hello World",
+					    "content" => "This is a test"
+					  },
+  				  "reprompt" => {
+  				    "outputSpeech" => {
+  				      "type" => "PlainText",
+  				      "text" => "Hello"
+  				    }
+  				  },
+  				  "shouldEndSession" => true
+  				}
+  			}
+    render json: j
   end
 
   private

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :items
 
   get 'response' => 'items#response_json'
-  post 'add_item' => 'items#add_item'
+  post 'response' => 'items#add_item'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
