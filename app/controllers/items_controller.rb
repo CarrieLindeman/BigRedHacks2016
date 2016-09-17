@@ -90,14 +90,16 @@ class ItemsController < ApplicationController
   end
 
   def add_item
-    # @item = Item.new
-    # p params[:request][:intent][:slots][:name]
+    @item = Item.new
+    @item.name = params[:request][:intent][:slots][:Food][:value]
+    @item.date = Date.parse(params[:request][:intent][:slots][:Date][:value])
+    @item.save
     j = {
 				  "version" => "1.0",
 					"response" => {
 					  "outputSpeech" => {
 					    "type" => "PlainText",
-					    "text" => "Hello World"
+					    "text" => "Got it."
 					  },
 					  "card" => {
 					    "type" => "Simple",
