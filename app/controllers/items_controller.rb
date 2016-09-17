@@ -92,7 +92,7 @@ class ItemsController < ApplicationController
   def add_item
     @item = Item.new
     @item.name = params[:request][:intent][:slots][:Food][:value]
-    @item.date = Date.parse(params[:request][:intent][:slots][:Date][:value])
+    @item.date = params[:request][:intent][:slots][:Date][:value]
     @item.save
     j = {
 				  "version" => "1.0",
