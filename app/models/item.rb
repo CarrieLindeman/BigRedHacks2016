@@ -16,6 +16,8 @@ class Item < ActiveRecord::Base
     			rgb[1] = ((expiration - Date.today).to_i / 14) * 255
     			rgb[0] = ((14 - (expiration - Date.today).to_i) / 14) * 255
     		end
+      else
+        rgb[0] = 255
     	end
     end
 
