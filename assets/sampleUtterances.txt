@@ -1,8 +1,0 @@
-GetFoods what is going to expire before {Date}
-GetFoods what will expire before {Date}
-GetFoods what is going bad before {Date}
-...
-GetDate when will {Food} expire?
-GetDate when will {Food} go bad?
-GetDate will {Food} go bad before {Date}?
-...
