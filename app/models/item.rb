@@ -6,8 +6,8 @@ class Item < ActiveRecord::Base
     end
 
     def color
-       minColor = [0,0,255]
-       maxColor = [255,0,0]
+       maxColor = [0,0,255]
+       minColor = [255,0,0]
 
        days = (expiration - Date.today).to_i
        score = calcScorePerc(days)
