@@ -1,4 +1,5 @@
 class Item < ActiveRecord::Base
+<<<<<<< HEAD
     include ActionView::Helpers::DateHelper
     
     def days_until_date
@@ -18,4 +19,6 @@ class Item < ActiveRecord::Base
     		end
     	end
     end 
+=======
+>>>>>>> parent of e995e89... Added missing files
 end
