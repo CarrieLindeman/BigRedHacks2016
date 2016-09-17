@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  include ActionView::Helpers::DateHelper
+
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   # GET /items
