@@ -7533,3 +7533,229 @@ Processing by ItemsController#index as JSON
   [1m[36mItem Load (0.3ms)[0m  [1mSELECT `items`.* FROM `items`[0m
   Rendered items/index.json.jbuilder (2.2ms)
 Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items" for ::1 at 2016-09-17 17:20:25 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (1.5ms)[0m  SELECT `items`.* FROM `items`
+  Rendered items/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 695ms (Views: 679.1ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/assets/scaffolds.self-149658ad0421a51019fe81302c87955efb1270a98de040779715e00a7bcb758b.css?body=1" for ::1 at 2016-09-17 17:20:26 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-17 17:20:26 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-17 17:20:26 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-17 17:20:26 -0400
+
+
+Started GET "/items.json" for ::1 at 2016-09-17 17:20:26 -0400
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.2ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  Rendered items/index.json.jbuilder (13.7ms)
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/items.json" for ::1 at 2016-09-17 17:21:16 -0400
+Processing by ItemsController#index as JSON
+  [1m[35mItem Load (0.4ms)[0m  SELECT `items`.* FROM `items`
+  Rendered items/index.json.jbuilder (15.5ms)
+Completed 200 OK in 22ms (Views: 10.4ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/items.json" for ::1 at 2016-09-17 17:21:29 -0400
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.6ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  Rendered items/index.json.jbuilder (22.5ms)
+Completed 200 OK in 36ms (Views: 23.1ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/items.json" for ::1 at 2016-09-17 17:21:43 -0400
+Processing by ItemsController#index as JSON
+  [1m[35mItem Load (0.3ms)[0m  SELECT `items`.* FROM `items`
+  Rendered items/index.json.jbuilder (6.1ms)
+Completed 200 OK in 14ms (Views: 10.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/items.json" for ::1 at 2016-09-17 17:21:50 -0400
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.8ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  Rendered items/index.json.jbuilder (8.7ms)
+Completed 200 OK in 16ms (Views: 10.0ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/items.json" for ::1 at 2016-09-17 17:23:11 -0400
+Processing by ItemsController#index as JSON
+  [1m[35mItem Load (0.3ms)[0m  SELECT `items`.* FROM `items`
+  Rendered items/index.json.jbuilder (7.7ms)
+Completed 200 OK in 22ms (Views: 13.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/items.json" for ::1 at 2016-09-17 17:23:13 -0400
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.6ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  Rendered items/index.json.jbuilder (5.9ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/items.json" for ::1 at 2016-09-17 17:24:11 -0400
+Processing by ItemsController#index as JSON
+  [1m[35mItem Load (0.2ms)[0m  SELECT `items`.* FROM `items`
+  Rendered items/index.json.jbuilder (8.3ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.9ms)
+
+ActionView::Template::Error (no implicit conversion of Date into String):
+    1: json.array!(@items) do |item|
+    2:   json.extract! item, :id, :name, :expiration, :removed, :days_until_date, :color
+    3:   json.url item_url(item, format: :json)
+    4: end
+  app/models/item.rb:9:in `parse'
+  app/models/item.rb:9:in `color'
+  app/views/items/index.json.jbuilder:2:in `block in _app_views_items_index_json_jbuilder___3803965388508560986_70301122952520'
+  app/views/items/index.json.jbuilder:1:in `_app_views_items_index_json_jbuilder___3803965388508560986_70301122952520'
+
+
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (42.5ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.4ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (73.6ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (23.6ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (49.7ms)
+
+
+Started GET "/items.json" for ::1 at 2016-09-17 17:24:19 -0400
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  Rendered items/index.json.jbuilder (7.7ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 2.7ms)
+
+ActionView::Template::Error (no implicit conversion of Date into String):
+    1: json.array!(@items) do |item|
+    2:   json.extract! item, :id, :name, :expiration, :removed, :days_until_date, :color
+    3:   json.url item_url(item, format: :json)
+    4: end
+  app/models/item.rb:9:in `parse'
+  app/models/item.rb:9:in `color'
+  app/views/items/index.json.jbuilder:2:in `block in _app_views_items_index_json_jbuilder___3803965388508560986_70301122952520'
+  app/views/items/index.json.jbuilder:1:in `_app_views_items_index_json_jbuilder___3803965388508560986_70301122952520'
+
+
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.5ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (3.3ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (35.6ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (79.3ms)
+
+
+Started GET "/items.json" for ::1 at 2016-09-17 17:24:26 -0400
+Processing by ItemsController#index as JSON
+  [1m[35mItem Load (0.3ms)[0m  SELECT `items`.* FROM `items`
+  Rendered items/index.json.jbuilder (10.5ms)
+Completed 200 OK in 18ms (Views: 13.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/items.json" for ::1 at 2016-09-17 17:24:34 -0400
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.7ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  Rendered items/index.json.jbuilder (18.6ms)
+Completed 200 OK in 34ms (Views: 18.2ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/items.json" for ::1 at 2016-09-17 17:24:58 -0400
+Processing by ItemsController#index as JSON
+  [1m[35mItem Load (1.0ms)[0m  SELECT `items`.* FROM `items`
+  Rendered items/index.json.jbuilder (23.8ms)
+Completed 200 OK in 31ms (Views: 19.3ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/items.json" for ::1 at 2016-09-17 17:41:47 -0400
+Processing by ItemsController#index as JSON
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/evan/Documents/Projects/BigRedHacks2016/app/app/models/item.rb:34: syntax error, unexpected ')', expecting keyword_end
+       (score * color_range.abs) / 100) + additional_value
+                                       ^):
+  app/models/item.rb:34: syntax error, unexpected ')', expecting keyword_end
+  app/controllers/items_controller.rb:81:in `index'
+
+
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.4ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (11.9ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.2ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (17.8ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/evan/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (38.1ms)
+
+
+Started GET "/items.json" for ::1 at 2016-09-17 17:42:01 -0400
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  Rendered items/index.json.jbuilder (7.1ms)
+Completed 200 OK in 13ms (Views: 9.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/items.json" for ::1 at 2016-09-17 17:43:48 -0400
+Processing by ItemsController#index as JSON
+  [1m[35mItem Load (0.4ms)[0m  SELECT `items`.* FROM `items`
+  Rendered items/index.json.jbuilder (8.8ms)
+Completed 200 OK in 14ms (Views: 9.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/items.json" for ::1 at 2016-09-17 17:43:58 -0400
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  Rendered items/index.json.jbuilder (7.6ms)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items.json" for ::1 at 2016-09-17 17:44:17 -0400
+Processing by ItemsController#index as JSON
+  [1m[35mItem Load (0.2ms)[0m  SELECT `items`.* FROM `items`
+  Rendered items/index.json.jbuilder (103.1ms)
+Completed 200 OK in 116ms (Views: 106.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/items.json" for ::1 at 2016-09-17 17:45:07 -0400
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (4.4ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  Rendered items/index.json.jbuilder (13.8ms)
+Completed 200 OK in 19ms (Views: 10.6ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/items.json" for ::1 at 2016-09-17 17:47:26 -0400
+Processing by ItemsController#index as JSON
+  [1m[35mItem Load (0.3ms)[0m  SELECT `items`.* FROM `items`
+  Rendered items/index.json.jbuilder (16.8ms)
+Completed 200 OK in 22ms (Views: 18.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/items.json" for ::1 at 2016-09-17 17:48:15 -0400
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  Rendered items/index.json.jbuilder (7.0ms)
+Completed 200 OK in 12ms (Views: 8.3ms | ActiveRecord: 2.0ms)
