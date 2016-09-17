@@ -15,6 +15,7 @@ set :domain, '104.131.7.81'
 set :deploy_to, '/var/www/expiration.esobko.com'
 set :repository, 'git@github.com:CarrieLindeman/BigRedHacks2016.git'
 set :branch, 'master'
+set :app_path, 'rails/CheckExpiration'
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
