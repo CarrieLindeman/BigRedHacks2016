@@ -99,7 +99,7 @@ class ItemsController < ApplicationController
 					"response" => {
 					  "outputSpeech" => {
 					    "type" => "PlainText",
-					    "text" => "Got it."
+					    "text" => "Got it. #{@item.name} expires on #{distance_of_time_in_words_to_now(@item.expiration)}"
 					  },
 					  "card" => {
 					    "type" => "Simple",
