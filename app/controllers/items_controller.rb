@@ -29,6 +29,16 @@ class ItemsController < ApplicationController
       else
         output_text = "Sorry, I couldn't find that item."
       end
+    elsif intent == 'DeleteItem'
+      input_name = params[:request][:intent][:slots][:Food][:value]
+      items = Item.where("name like ?", "%#{input_name}%").order(expiration: :asc)
+      if items.length > 0
+        the_item = items.first
+        the_item.update_attribute(:removed, true)
+        output_text = "I removed #{the_item.name}."
+      else
+        output_text = "Sorry, I couldn't find that item."
+      end
     elsif intent == 'GetFoods'
       input_date = Date.parse(params[:request][:intent][:slots][:Date][:value])
       @items = Item.where("expiration <= ?", input_date).where(removed: false)
