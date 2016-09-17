@@ -20,7 +20,7 @@ class Item < ActiveRecord::Base
     end
 
     def calcScorePerc(score)
-      normalized_score = (score < 0) ? 14 : score
+      normalized_score = (score < 0) ? 0 : score
       max = 14
       min = 0
       range = max - min
