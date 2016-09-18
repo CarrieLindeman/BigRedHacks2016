@@ -78,7 +78,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all.order(expiration: :asc)
+    @items = Item.where(removed: false).order(expiration: :asc)
   end
 
   # GET /items/1
